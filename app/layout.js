@@ -1,27 +1,27 @@
-import { Cairo } from "next/font/google";
-import "./globals.css";
-import Navbar from "../components/Navbar";
+import './globals.css';
+import { Cairo } from 'next/font/google'; // تأكد إنك عم تستخدم الخط اللي اخترناه (أو Inter)
 
-// 1. استيراد الخط من جوجل مباشرة
-const cairo = Cairo({ 
-  subsets: ["latin"], 
-  weight: ["400", "700", "900"], // أوزان الخط (عادي، عريض، عريض جداً)
-});
+const cairo = Cairo({ subsets: ['arabic'] });
 
-// 2. إعدادات الميتا (عنوان الموقع ووصفه في جوجل)
 export const metadata = {
-  title: "Smart Store | أفضل الاشتراكات الرقمية",
-  description: "متجر Smart Store لبيع اشتراكات Canva, ChatGPT, CapCut بأرخص الأسعار وضمان كامل.",
+  title: 'Smart Store | أقوى الاشتراكات الرقمية', // هذا العنوان اللي بيطلع ببحث غوغل
+  description: 'متجر Smart Store يوفر لك اشتراكات Canva, CapCut, Gemini بأرخص الأسعار مع تفعيل فوري وضمان ذهبي. تسوق الآن!', // هذا الوصف اللي تحته
+  keywords: ['اشتراكات رقمية', 'كانفا برو', 'Canva Pro', 'CapCut', 'Gemini', 'متجر اشتراكات', 'ارخص الاشتراكات'], // كلمات مفتاحية للبحث
+  icons: {
+    icon: '/favicon.ico', // لازم تكون عندك صورة صغيرة اسمها favicon.ico بمجلد public
+  },
+  openGraph: {
+    title: 'Smart Store - وفر فلوسك واشتري بذكاء',
+    description: 'عروض حصرية على اشتراكات التصميم والذكاء الاصطناعي.',
+    type: 'website',
+    locale: 'ar_SA',
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="ar" dir="rtl">
-      {/* 3. تطبيق الخط على جسم الموقع بالكامل */}
-      <body className={cairo.className}>
-        <Navbar />
-        {children}
-      </body>
+      <body className={cairo.className}>{children}</body>
     </html>
   );
 }
