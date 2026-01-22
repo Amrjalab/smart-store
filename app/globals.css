@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-size: 100%;
 }
 
 
@@ -17,6 +18,12 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    font-size: 110%; 
   }
 }
 
