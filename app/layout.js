@@ -1,5 +1,6 @@
 import './globals.css';
 import { Cairo } from 'next/font/google'; // تأكد إنك عم تستخدم الخط اللي اخترناه (أو Inter)
+import { GoogleAnalytics } from '@next/third-parties/google'; //
 
 const cairo = Cairo({ subsets: ['arabic'] });
 
@@ -22,6 +23,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ar" dir="rtl">
       <body className={cairo.className}>{children}</body>
+      {/* 👇 2. إضافة الكود هنا (بدل G-xxx بالكود تبعك) */}
+      <GoogleAnalytics gaId="G-505MGP0GR5" />
     </html>
   );
 }
